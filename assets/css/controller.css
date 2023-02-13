@@ -1,0 +1,298 @@
+/* Imports */
+@font-face {
+    font-family: nescontroller;
+    src: url('../fonts/NES_Controller_MrShrike.ttf');
+}
+
+/* Color palette to use for the controller */
+:root {
+    --light-gray: rgb(240, 240, 240);
+    --dark-gray: rgb(72, 72, 72);
+    --barely-not-black: rgb(24, 24, 24);
+    --nasty-yellowed-gray: rgb(189, 174, 173);
+    --red: rgb(238, 21, 21);
+}
+
+
+/* Html and body styling */
+html, body {
+    margin: 0;
+
+    background-color: rgb(34, 33, 41);
+}
+
+/* Styling for the controller container */
+#controller-container {
+    background-color: var(--light-gray);
+
+    width: 12.4cm;
+    height: 5.4cm;
+
+    box-sizing: border-box;
+
+    padding: 30px 12px 12px 12px;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 0 20px black;
+
+    border-radius: 3px;
+}
+
+/* Inside of the controller */
+#controller-inner {
+    background-color: var(--barely-not-black);
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 3px;
+
+    display: flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    padding: 0 22px 22px 22px;
+    
+    gap: 10px;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Styling for the yellow stripes on the controller */
+#stripes-container {
+    position: absolute;
+
+    left: 33.5%;
+
+    height: 100%;
+    width: 3.7cm;
+}
+
+.stripe.first {
+    border-radius: 0 0 3px 3px;
+}
+
+.stripe {
+    width: 100%;
+    height: 23px;
+
+    background-color: var(--nasty-yellowed-gray);
+
+    margin-bottom: 9px;
+
+    border-radius: 3px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15%;
+}
+
+.stripe.last {
+    border-radius: 3px 3px 0 0;
+
+    position: absolute;
+
+    bottom: -15px;
+}
+
+.stripe > p {
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+
+    font-family: nescontroller;
+
+    color: var(--red)
+}
+
+/* D-Pad styling for the NES controller */
+#dpad {
+    width: 2.5cm;
+    height: 2.5cm;
+
+    position: relative;
+
+    align-self: flex-end;
+}
+
+#up, #down, #left, #right {
+    width: 31%;
+    height: 31%;
+
+    position: absolute;
+
+    background-color: var(--barely-not-black);
+
+    border-radius: 3px;
+}
+
+#up {
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-top: 3px solid var(--light-gray);
+    border-left: 3px solid var(--light-gray);
+    border-right: 3px solid var(--light-gray);
+}
+
+#down {
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-bottom: 3px solid var(--light-gray);
+    border-left: 3px solid var(--light-gray);
+    border-right: 3px solid var(--light-gray);
+}
+
+#left {
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    border-top: 3px solid var(--light-gray);
+    border-bottom: 3px solid var(--light-gray);
+    border-left: 3px solid var(--light-gray);
+}
+
+#right {
+    top: 50%;
+    right: 0;
+
+    transform: translateY(-50%);
+
+    border-top: 3px solid var(--light-gray);
+    border-bottom: 3px solid var(--light-gray);
+    border-right: 3px solid var(--light-gray);
+}
+
+/* Start and select buttons styling */
+#start-select {
+    background-color: var(--light-gray);
+
+    width: 3.7cm;
+    height: 1cm;
+
+    align-self: flex-end;
+
+    position: relative;
+
+    left: 5.5%;
+
+    border-radius: 3px;
+
+    bottom: 7px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 25%;
+}
+
+#start, #select {
+    width: 1cm;
+    height: 0.35cm;
+
+    background-color: var(--barely-not-black);
+
+    display: inline-block;
+
+    border-radius: 100px;
+}
+
+/* A and B button styling */
+#ab-buttons {
+    align-self: flex-end;
+
+    right: 22px;
+
+    position: absolute;
+
+    bottom: 20px;
+}
+
+#A, #B {
+    width: 1.2cm;
+    height: 1.2cm;
+
+    background-color: var(--light-gray);
+
+    display: inline-block;
+
+    box-sizing: border-box;
+
+    border: 3px solid var(--light-gray);
+    border-radius: 3px;
+}
+
+#A > div, #B > div {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--red);
+
+    border-radius: 100px;
+}
+
+#A {
+    margin-left: 7px;
+}
+
+#ab-letters {
+    position: relative;
+
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+
+    bottom: 0;
+}
+
+#ab-letters > p {
+    margin: 0;
+    padding: 0;
+
+    position: absolute;
+
+    width: 45%;
+
+    font-family: nescontroller;
+
+    color: var(--red);
+
+    font-size: 20px;
+
+    display: inline-block;
+
+    text-align: right;
+}
+
+#letter-b {
+    left: 0;
+}
+
+#letter-a {
+    right: 0;
+}
