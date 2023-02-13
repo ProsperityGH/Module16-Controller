@@ -1,3 +1,4 @@
+// Get all the buttons from the controller
 const dpad_up = document.getElementById("up");
 const dpad_down = document.getElementById("down");
 const dpad_left = document.getElementById("left");
@@ -11,12 +12,12 @@ const b_button = document.getElementById('B_inner');
 
 const popup = document.getElementById('popup');
 
-let controller_status = false;
-
-console.log(b_button);
-
 const buttons = [dpad_up, dpad_down, dpad_left, dpad_right, select_button, start_button, a_button, b_button];
 
+// Status variable to determine if the controller is active or inactive
+let controller_status = false;
+
+// Add event listeners to the buttons
 for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
 
@@ -42,19 +43,19 @@ function handleStartButtonDown() {
         popup.classList.add("controller_inactive");
         popup.innerText = "Controller inactive";
 
+        controller_status = false;
+
         setTimeout(() => {
             popup.classList.remove("controller_inactive");
         }, 700);
-
-        controller_status = false;
     } else {
         popup.classList.add("controller_active");
         popup.innerText = "Controller active";
 
+        controller_status = true;
+
         setTimeout(() => {
             popup.classList.remove("controller_active");
         }, 700);
-
-        controller_status = true;
     }
 }
