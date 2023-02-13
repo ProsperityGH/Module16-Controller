@@ -1,0 +1,46 @@
+/* Styling for popup on top of screen */
+#popup {
+    width: 200px;
+    height: 30px;
+
+    position: absolute;
+
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    opacity: 0;
+
+    border-radius: 10px;
+
+    transition: all .2s ease-in-out;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-weight: bolder;
+    font-family: nescontroller;
+    font-size: 20px;
+}
+
+.controller_active {
+    opacity: 1 !important;
+
+    background-color: green;
+    box-shadow: 0 0 10px green;
+
+    top: 25px !important;
+}
+
+.controller_inactive {
+    opacity: 1 !important;
+
+    background-color: red;
+    box-shadow: 0 0 10px red;
+
+    top: 25px !important;
+}

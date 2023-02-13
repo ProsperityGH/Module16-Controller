@@ -6,12 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./assets/css/controller.css">
+    <link rel="stylesheet" href="./assets/css/popup.css">
 
-    <script src="./assets/js/controller.js" defer></script>
+    <script src="./assets/js/button_effects.js" defer></script>
 
     <title>NES | controller</title>
 </head>
 <body>
+    <div id="popup">
+        <!-- Popup for activating/deactivating controller -->
+    </div>
+
     <div id="controller-container">
         <div id="controller-inner">
             <div id="stripes-container">
@@ -32,16 +37,16 @@
             </div>
 
             <div id="start-select">
-                <div id="start"></div>
                 <div id="select"></div>
+                <div id="start"></div>
             </div>
 
             <div id="ab-buttons">
                 <div id="B">
-                    <div></div>
+                    <div id="B_inner"></div>
                 </div>
                 <div id="A">
-                    <div></div>
+                    <div id="A_inner"></div>
                 </div>
                 <div id="ab-letters">
                     <p id="letter-b">B</p>
