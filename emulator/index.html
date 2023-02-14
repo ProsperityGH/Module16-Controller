@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NES | game</title>
+</head>
+<body>
+    <canvas id="nes-canvas">
+
+    </canvas>
+
+    <script type="text/javascript" src="https://unpkg.com/jsnes/dist/jsnes.min.js">
+        // Set the video output
+        const canvas = document.getElementById("nes-canvas");
+        const context = canvas.getContext("2d");
+        const imageData = context.createImageData(256, 240);
+
+        // Set audio output
+        const audio_context = new AudioContext();
+        const scriptNode = audio_context.createScriptProcessor(2048, 0, 2);
+
+        scriptNode.onaudioprocess = (audioProcessing) => {
+            const output_buffer = audioProcessingEvent.outputBuffer;
+
+            for (let channel = 0; channel < outputBuffer.numberOfChannels; channel++) {
+                let data = outputBuffer.getChannelData(channel);
+                let audioData = new Float32Array(data.length);
+
+                for (let i = 0; i < data.length; i++) {
+                    audioData[i] = data[i];
+                }
+            }
+        };
+
+        scriptNode.connect(audio_context.destination);
+
+        // Initialize output for sound and video
+        let nes = new jsnes.NES({
+            onFrame: function(frameBuffer) {
+                for (var i = 0; i < frameBuffer.length; i++) {
+                    imageData.data[i] = frameBuffer[i];
+                }
+
+                context.putImageData(imageData, 0, 0);
+            },
+            onAudioSample: function(left, right) {
+                scriptNode.onaudioprocess({
+                    outputBuffer: {
+                        numberOfChannels: 2,
+                        getChannelData: function(channel) {
+                            return channel === 0 ? left : right;
+                        }
+                    }
+                });
+            }
+        });
+
+        // Load ROM data
+        const fs = require('fs');
+        let romData = fs.readFileSync('../assets/rom/Super_Mario_Bros.nes', {encoding: 'binary'});
+    </script>
+</body>
+</html>

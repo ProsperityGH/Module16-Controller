@@ -1,5 +1,5 @@
 // Window the game takes place in
-const target = window.open('./game/index.html');
+const target = window.open('./emulator/index.html');
 
 // Get the input registery from the game page
 let input;
