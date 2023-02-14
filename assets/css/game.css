@@ -1,0 +1,46 @@
+/* Reset margin and padding on body */
+html, body {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Playingfield styling */
+#playfield {
+    width: 100%;
+    height: 100%;
+
+    background-color: gray;
+
+    display: flex;
+
+    position: relative;
+}
+
+/* Player container */
+#player-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    position: absolute;
+
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for the player */
+#player {
+    width: 50px;
+    height: 50px;
+
+    background-color: black;
+
+    transition: all .25s ease-in-out;
+
+    background-image: url('../img/arrow-up.png');
+    background-size: cover;
+}

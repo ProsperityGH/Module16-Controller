@@ -234,7 +234,7 @@ html, body {
     bottom: 20px;
 }
 
-#A, #B {
+#A_ridge, #B_ridge {
     width: 1.2cm;
     height: 1.2cm;
 
@@ -248,7 +248,7 @@ html, body {
     border-radius: 3px;
 }
 
-#A > div, #B > div {
+#A_ridge > div, #B_ridge > div {
     width: 100%;
     height: 100%;
 
@@ -257,7 +257,7 @@ html, body {
     border-radius: 100px;
 }
 
-#A {
+#A_ridge {
     margin-left: 7px;
 }
 
