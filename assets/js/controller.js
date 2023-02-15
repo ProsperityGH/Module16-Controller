@@ -3,9 +3,11 @@ const target = window.open('./game/index.html');
 
 // Get the input registery from the game page
 let input;
+let last_input;
 
 target.window.addEventListener('load', () => {
     input = target.document.getElementById('input-register');
+    last_input = target.document.getElementById('last-input-register');
 });
 
 // Get all the buttons from the controller
@@ -43,6 +45,7 @@ for (let i = 0; i < buttons.length; i++) {
 function handleButtonDown() {
     this.style.filter = "brightness(300%)";
 
+    last_input.value = input.value;
     input.value = this.id;
 }
 
