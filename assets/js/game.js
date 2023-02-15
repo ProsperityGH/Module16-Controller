@@ -1,6 +1,5 @@
 // Global variables
 let deg = 0;
-console.log(deg);
 
 // Refresh the game 60 frames per second
 setInterval(() => {
@@ -40,17 +39,14 @@ function degrees(currentInput, lastInput) {
     // If the current input is up
     if (currentInput == "up" && lastInput == "left") {
         deg = deg + 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "up" && lastInput == "right") {
         deg = deg - 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "up" && lastInput == "down") {
         deg = deg - 180;
-        console.log(deg);
 
         return deg;
     }
@@ -58,17 +54,14 @@ function degrees(currentInput, lastInput) {
     // If the current input is left
     if (currentInput == "left" && lastInput == "down") {
         deg = deg + 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "left" && lastInput == "up") {
         deg = deg - 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "left" && lastInput == "right") {
         deg = deg - 180;
-        console.log(deg);
 
         return deg;
     }
@@ -76,17 +69,14 @@ function degrees(currentInput, lastInput) {
     // If the current input is down
     if (currentInput == "down" && lastInput == "right") {
         deg = deg + 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "down" && lastInput == "left") {
         deg = deg - 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "down" && lastInput == "up") {
         deg = deg - 180;
-        console.log(deg);
 
         return deg;
     }
@@ -94,17 +84,14 @@ function degrees(currentInput, lastInput) {
     // If the current input is right
     if (currentInput == "right" && lastInput == "up") {
         deg = deg + 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "right" && lastInput == "down") {
         deg = deg - 90;
-        console.log(deg);
 
         return deg;
     } else if (currentInput == "right" && lastInput == "left") {
         deg = deg - 180;
-        console.log(deg);
 
         return deg;
     }
