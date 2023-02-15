@@ -46,7 +46,7 @@ function degrees(currentInput, lastInput) {
 
         return deg;
     } else if (currentInput == "up" && lastInput == "down") {
-        deg = deg - 180;
+        deg = deg + 180;
 
         return deg;
     }
@@ -61,7 +61,7 @@ function degrees(currentInput, lastInput) {
 
         return deg;
     } else if (currentInput == "left" && lastInput == "right") {
-        deg = deg - 180;
+        deg = deg + 180;
 
         return deg;
     }
