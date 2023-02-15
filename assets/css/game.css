@@ -34,13 +34,12 @@ html, body {
 
 /* Styling for the player */
 #player {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
 
-    background-color: black;
 
     transition: all .25s ease-in-out;
 
-    background-image: url('../img/arrow-up.png');
+    background-image: url('../img/sanic.png');
     background-size: cover;
 }
