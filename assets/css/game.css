@@ -37,7 +37,6 @@ html, body {
     width: 100px;
     height: 100px;
 
-
     transition: all .25s ease-in-out;
 
     background-image: url('../img/sanic.png');
