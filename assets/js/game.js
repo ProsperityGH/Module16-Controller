@@ -5,23 +5,27 @@ console.log(deg);
 // Refresh the game 60 frames per second
 setInterval(() => {
     const input = document.getElementById('input-register').value;
-    const last_input = document.getElementById('last-input-register').value;
+    const last_input = document.getElementById('last-input-register');
     const player = document.getElementById('player');
 
     if (input == "up") {
-        const turn = degrees(input, last_input);
+        const turn = degrees(input, last_input.value);
+        last_input.value = input;
 
         player.style.transform = `rotateZ(${turn}deg)`;
     } else if (input == "down") {
-        const turn = degrees(input, last_input);
+        const turn = degrees(input, last_input.value);
+        last_input.value = input;
 
         player.style.transform = `rotateZ(${turn}deg)`;
     } else if (input == "left") {
-        const turn = degrees(input, last_input);
+        const turn = degrees(input, last_input.value);
+        last_input.value = input;
 
         player.style.transform = `rotateZ(${turn}deg)`;
     } else if (input == "right") {
-        const turn = degrees(input, last_input);
+        const turn = degrees(input, last_input.value);
+        last_input.value = input;
 
         player.style.transform = `rotateZ(${turn}deg)`;
     }
