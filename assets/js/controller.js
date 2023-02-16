@@ -63,12 +63,16 @@ function handleButtonDown() {
 }
 
 function handleABButtons() {
-    button_input.value = this.id;
+    if (controller_status) {
+        button_input.value = this.id;
+    }
 }
 
 function handleDpadButtons() {
-    last_direction_input.value = direction_input.value;
-    direction_input.value = this.id;
+    if (controller_status) {
+        last_direction_input.value = direction_input.value;
+        direction_input.value = this.id;
+    }
 }
 
 function handleButtonUp() {

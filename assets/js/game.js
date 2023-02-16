@@ -4,7 +4,7 @@ const kaboom = new Audio('../assets/sounds/kaboem.mp3')
 
 // Refresh the game 60 frames per second
 setInterval(() => {
-    const direction = document.getElementById('direction-input-register').value;
+    const direction = document.getElementById('direction-input-register');
     const last_direction = document.getElementById('last-direction-input-register');
 
     const AB = document.getElementById('button-input-register');
@@ -12,8 +12,6 @@ setInterval(() => {
     const player = document.getElementById('player');
 
     const controller_active = document.getElementById('controller-active').value;
-
-    console.log(controller_active);
 
     if (controller_active == 'true')  {
         if (AB.value == "A") {
@@ -28,24 +26,24 @@ setInterval(() => {
             console.log('suicide bomb');
         }
 
-        if (direction == "up") {
-            const turn = degrees(direction, last_direction.value);
-            last_direction.value = direction;
+        if (direction.value == "up") {
+            const turn = degrees(direction.value, last_direction.value);
+            last_direction.value = direction.value;
 
             player.style.transform = `rotateZ(${turn}deg)`;
-        } else if (direction == "down") {
-            const turn = degrees(direction, last_direction.value);
-            last_direction.value = direction;
+        } else if (direction.value == "down") {
+            const turn = degrees(direction.value, last_direction.value);
+            last_direction.value = direction.value;
 
             player.style.transform = `rotateZ(${turn}deg)`;
-        } else if (direction == "left") {
-            const turn = degrees(direction, last_direction.value);
-            last_direction.value = direction;
+        } else if (direction.value == "left") {
+            const turn = degrees(direction.value, last_direction.value);
+            last_direction.value = direction.value;
 
             player.style.transform = `rotateZ(${turn}deg)`;
-        } else if (direction == "right") {
-            const turn = degrees(direction, last_direction.value);
-            last_direction.value = direction;
+        } else if (direction.value == "right") {
+            const turn = degrees(direction.value, last_direction.value);
+            last_direction.value = direction.value;
 
             player.style.transform = `rotateZ(${turn}deg)`;
         }
