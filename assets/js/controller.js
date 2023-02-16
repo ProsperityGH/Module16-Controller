@@ -36,6 +36,7 @@ const buttons = [dpad_up, dpad_down, dpad_left, dpad_right, select_button, start
 
 // Status variable to determine if the controller is active or inactive
 let controller_status = false;
+const status_light = document.getElementById('light');
 
 // Add event listeners to the buttons
 for (let i = 0; i < buttons.length; i++) {
@@ -87,6 +88,8 @@ function handleStartButtonDown() {
         controller_status = false;
         controller_active.value = controller_status;
 
+        status_light.style.backgroundColor = "red";
+
         setTimeout(() => {
             popup.classList.remove("controller_inactive");
         }, 700);
@@ -96,6 +99,8 @@ function handleStartButtonDown() {
 
         controller_status = true;
         controller_active.value = controller_status;
+
+        status_light.style.backgroundColor = "green";
 
         setTimeout(() => {
             popup.classList.remove("controller_active");
