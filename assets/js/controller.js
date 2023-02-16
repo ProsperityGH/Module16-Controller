@@ -15,6 +15,8 @@ target.window.addEventListener('load', () => {
 
     button_input = target.document.getElementById('button-input-register');
 
+    player = target.document.getElementById('player');
+
     controller_active = target.document.getElementById('controller-active');
 });
 
@@ -34,6 +36,9 @@ const popup = document.getElementById('popup');
 
 const buttons = [dpad_up, dpad_down, dpad_left, dpad_right, select_button, start_button, a_button, b_button];
 
+
+var playermodel = 0;
+
 // Status variable to determine if the controller is active or inactive
 let controller_status = false;
 const status_light = document.getElementById('light');
@@ -52,6 +57,10 @@ for (let i = 0; i < buttons.length; i++) {
 
     if (button === a_button || button === b_button) {
         button.addEventListener('mousedown', handleABButtons);
+    }
+
+    if (button === select_button) {
+        button.addEventListener('mousedown', handleSelectButtonDown);
     }
 
     if (button === start_button) {
@@ -80,6 +89,38 @@ function handleButtonUp() {
     this.removeAttribute('style');
 }
 
+// Changes the players playermodel
+function handleSelectButtonDown() {
+    if (!controller_status) {
+      return;
+    } else {
+      if (playermodel === 1) {
+        popup.classList.add("mrbeast");
+        popup.innerText = "You're now MrBeast";
+
+        player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
+        playermodel = 0;
+
+        setTimeout(() => {
+            popup.classList.remove("mrbeast");
+        }, 700);
+
+      } else {
+        popup.classList.add("sanic");
+        popup.innerText = "You're now Sanic";
+
+        player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
+        playermodel = 1;
+
+        setTimeout(() => {
+            popup.classList.remove("sanic");
+        }, 700);
+      }
+    }
+}
+
+
+// Sees when the controller is active, when not active all input is disabled
 function handleStartButtonDown() {
     if (controller_status) {
         popup.classList.add("controller_inactive");
@@ -105,6 +146,8 @@ function handleStartButtonDown() {
         setTimeout(() => {
             popup.classList.remove("controller_active");
         }, 700);
+
+        playermodel = 1;
 
         document.controller_active = true;
     }

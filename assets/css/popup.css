@@ -44,3 +44,23 @@
 
     top: 25px !important;
 }
+
+.mrbeast {
+    opacity: 1 !important;
+
+    background-color: yellow;
+    box-shadow: yellow;
+
+    color: black !important;
+
+    top: 25px !important;
+}
+
+.sanic {
+    opacity: 1 !important;
+
+    background-color: blue;
+    box-shadow: 0 0 10px blue;
+
+    top: 25px !important;
+}

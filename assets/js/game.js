@@ -13,26 +13,25 @@ setInterval(() => {
 
     const controller_active = document.getElementById('controller-active').value;
 
-    if (controller_active == 'true')  {
+
+    if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
             AB.value = "";
             console.log('shoot')
         } else if (AB.value == "B") {
-            AB.value = "";
-          
-            kaboom.play();
-            player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
+          kaboom.play();
+          AB.value = "";
+        
+          player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
+          setTimeout(() => {
+            player.style.animation = '1.5s ease-in-out 0s 1 normal forwards';
             setTimeout(() => {
-              player.style.animation = '1.5s ease-in-out 0s 1 normal forwards';
-              setTimeout(() => {
-                player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
-              }, 600);
-            }, 100);
-          
-            console.log(player.style.animation);
-          
-            console.log('suicide bomb');
-          }
+              player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
+            }, 600);
+          }, 100);
+        
+          console.log('suicide bomb');
+        }
 
         if (direction.value == "up") {
             const turn = degrees(direction.value, last_direction.value);
