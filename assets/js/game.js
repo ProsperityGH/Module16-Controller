@@ -21,12 +21,20 @@ setInterval(() => {
             console.log('shoot')
         } else if (AB.value == "B") {
             AB.value = "";
-
+          
             kaboom.play();
             player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
-
+            setTimeout(() => {
+              player.style.animation = '1.5s ease-in-out 0s 1 normal forwards';
+              setTimeout(() => {
+                player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
+              }, 600);
+            }, 100);
+          
+            console.log(player.style.animation);
+          
             console.log('suicide bomb');
-        }
+          }
 
         if (direction == "up") {
             const turn = degrees(direction, last_direction.value);
