@@ -1,5 +1,6 @@
 // Global variables
 let deg = 0;
+const kaboom = new Audio('../assets/sounds/kaboem.mp3')
 
 // Refresh the game 60 frames per second
 setInterval(() => {
@@ -15,6 +16,10 @@ setInterval(() => {
         console.log('shoot')
     } else if (AB.value == "B") {
         AB.value = "";
+
+        kaboom.play();
+        player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
+
         console.log('suicide bomb');
     }
 
