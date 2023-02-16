@@ -7,11 +7,15 @@ let last_direction_input;
 
 let button_input;
 
+let controller_active;
+
 target.window.addEventListener('load', () => {
     direction_input = target.document.getElementById('direction-input-register');
     last_direction_input = target.document.getElementById('last-direction-input-register');
 
     button_input = target.document.getElementById('button-input-register');
+
+    controller_active = target.document.getElementById('controller-active');
 });
 
 // Get all the buttons from the controller
@@ -77,6 +81,7 @@ function handleStartButtonDown() {
         popup.innerText = "Controller inactive";
 
         controller_status = false;
+        controller_active.value = controller_status;
 
         setTimeout(() => {
             popup.classList.remove("controller_inactive");
@@ -86,9 +91,12 @@ function handleStartButtonDown() {
         popup.innerText = "Controller active";
 
         controller_status = true;
+        controller_active.value = controller_status;
 
         setTimeout(() => {
             popup.classList.remove("controller_active");
         }, 700);
+
+        document.controller_active = true;
     }
 }

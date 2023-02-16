@@ -11,38 +11,44 @@ setInterval(() => {
 
     const player = document.getElementById('player');
 
-    if (AB.value == "A") {
-        AB.value = "";
-        console.log('shoot')
-    } else if (AB.value == "B") {
-        AB.value = "";
+    const controller_active = document.getElementById('controller-active').value;
 
-        kaboom.play();
-        player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
+    console.log(controller_active);
 
-        console.log('suicide bomb');
-    }
+    if (controller_active == 'true')  {
+        if (AB.value == "A") {
+            AB.value = "";
+            console.log('shoot')
+        } else if (AB.value == "B") {
+            AB.value = "";
 
-    if (direction == "up") {
-        const turn = degrees(direction, last_direction.value);
-        last_direction.value = direction;
+            kaboom.play();
+            player.style.backgroundImage = "url('../assets/img/kaboem.gif')";
 
-        player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (direction == "down") {
-        const turn = degrees(direction, last_direction.value);
-        last_direction.value = direction;
+            console.log('suicide bomb');
+        }
 
-        player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (direction == "left") {
-        const turn = degrees(direction, last_direction.value);
-        last_direction.value = direction;
+        if (direction == "up") {
+            const turn = degrees(direction, last_direction.value);
+            last_direction.value = direction;
 
-        player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (direction == "right") {
-        const turn = degrees(direction, last_direction.value);
-        last_direction.value = direction;
+            player.style.transform = `rotateZ(${turn}deg)`;
+        } else if (direction == "down") {
+            const turn = degrees(direction, last_direction.value);
+            last_direction.value = direction;
 
-        player.style.transform = `rotateZ(${turn}deg)`;
+            player.style.transform = `rotateZ(${turn}deg)`;
+        } else if (direction == "left") {
+            const turn = degrees(direction, last_direction.value);
+            last_direction.value = direction;
+
+            player.style.transform = `rotateZ(${turn}deg)`;
+        } else if (direction == "right") {
+            const turn = degrees(direction, last_direction.value);
+            last_direction.value = direction;
+
+            player.style.transform = `rotateZ(${turn}deg)`;
+        }
     }
 }, 16.7);
 
@@ -112,3 +118,4 @@ function degrees(currentInput, lastInput) {
         return deg;
     }
 }  
+
