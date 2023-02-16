@@ -3,28 +3,39 @@ let deg = 0;
 
 // Refresh the game 60 frames per second
 setInterval(() => {
-    const input = document.getElementById('input-register').value;
-    const last_input = document.getElementById('last-input-register');
+    const direction = document.getElementById('direction-input-register').value;
+    const last_direction = document.getElementById('last-direction-input-register');
+
+    const AB = document.getElementById('button-input-register');
+
     const player = document.getElementById('player');
 
-    if (input == "up") {
-        const turn = degrees(input, last_input.value);
-        last_input.value = input;
+    if (AB.value == "A") {
+        AB.value = "";
+        console.log('shoot')
+    } else if (AB.value == "B") {
+        AB.value = "";
+        console.log('suicide bomb');
+    }
+
+    if (direction == "up") {
+        const turn = degrees(direction, last_direction.value);
+        last_direction.value = direction;
 
         player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (input == "down") {
-        const turn = degrees(input, last_input.value);
-        last_input.value = input;
+    } else if (direction == "down") {
+        const turn = degrees(direction, last_direction.value);
+        last_direction.value = direction;
 
         player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (input == "left") {
-        const turn = degrees(input, last_input.value);
-        last_input.value = input;
+    } else if (direction == "left") {
+        const turn = degrees(direction, last_direction.value);
+        last_direction.value = direction;
 
         player.style.transform = `rotateZ(${turn}deg)`;
-    } else if (input == "right") {
-        const turn = degrees(input, last_input.value);
-        last_input.value = input;
+    } else if (direction == "right") {
+        const turn = degrees(direction, last_direction.value);
+        last_direction.value = direction;
 
         player.style.transform = `rotateZ(${turn}deg)`;
     }

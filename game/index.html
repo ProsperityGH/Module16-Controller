@@ -12,12 +12,18 @@
     <title>NES | game</title>
 </head>
 <body>
-    <input type="hidden" value="up" id="input-register">
-    <input type="hidden" value="up" id="last-input-register">
+    <input type="hidden" value="up" id="direction-input-register">
+    <input type="hidden" value="up" id="last-direction-input-register">
+
+    <input type="hidden" value="" id="button-input-register">
 
     <div id="playfield">
         <div id="player-container">
             <div id="player"></div>
+        </div>
+
+        <div id="enemies-container">
+            <!-- As enemies spawn this div will fill up -->
         </div>
     </div>
 </body>

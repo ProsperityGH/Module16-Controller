@@ -2,12 +2,16 @@
 const target = window.open('./game/index.html');
 
 // Get the input registery from the game page
-let input;
-let last_input;
+let direction_input;
+let last_direction_input;
+
+let button_input;
 
 target.window.addEventListener('load', () => {
-    input = target.document.getElementById('input-register');
-    last_input = target.document.getElementById('last-input-register');
+    direction_input = target.document.getElementById('direction-input-register');
+    last_direction_input = target.document.getElementById('last-direction-input-register');
+
+    button_input = target.document.getElementById('button-input-register');
 });
 
 // Get all the buttons from the controller
@@ -37,6 +41,14 @@ for (let i = 0; i < buttons.length; i++) {
     button.addEventListener('mouseup', handleButtonUp);
     button.addEventListener('mouseleave', handleButtonUp);
 
+    if (button === dpad_up || button === dpad_down || button === dpad_left || button === dpad_right) {
+        button.addEventListener('mousedown', handleDpadButtons);
+    }
+
+    if (button === a_button || button === b_button) {
+        button.addEventListener('mousedown', handleABButtons);
+    }
+
     if (button === start_button) {
         button.addEventListener('mousedown', handleStartButtonDown);
     }
@@ -44,9 +56,15 @@ for (let i = 0; i < buttons.length; i++) {
 
 function handleButtonDown() {
     this.style.filter = "brightness(300%)";
+}
 
-    last_input.value = input.value;
-    input.value = this.id;
+function handleABButtons() {
+    button_input.value = this.id;
+}
+
+function handleDpadButtons() {
+    last_direction_input.value = direction_input.value;
+    direction_input.value = this.id;
 }
 
 function handleButtonUp() {
