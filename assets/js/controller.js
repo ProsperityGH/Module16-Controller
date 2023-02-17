@@ -1,6 +1,10 @@
 // Window the game takes place in
 const target = window.open('./game/index.html');
 
+//Other global variables
+const sanic = new Audio('../assets/sounds/sanic.mp3');
+const mrbeast = new Audio('../assets/sounds/mrbeast.mp3');
+
 // Get the input registery from the game page
 let direction_input;
 let last_direction_input;
@@ -98,6 +102,8 @@ function handleSelectButtonDown() {
         popup.classList.add("mrbeast");
         popup.innerText = "You're now MrBeast";
 
+        mrbeast.play();
+
         player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
         playermodel = 0;
 
@@ -108,6 +114,8 @@ function handleSelectButtonDown() {
       } else {
         popup.classList.add("sanic");
         popup.innerText = "You're now Sanic";
+
+        sanic.play();
 
         player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
         playermodel = 1;

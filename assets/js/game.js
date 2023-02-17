@@ -1,6 +1,6 @@
 // Global variables
 let deg = 0;
-const kaboom = new Audio('../assets/sounds/kaboem.mp3')
+const kaboom = new Audio('../assets/sounds/kaboem.mp3');
 
 // Refresh the game 60 frames per second
 setInterval(() => {
