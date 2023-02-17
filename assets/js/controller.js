@@ -1,9 +1,10 @@
 // Window the game takes place in
 const target = window.open('./game/index.html');
 
-//Other global variables
+// Sounds
 const sanic = new Audio('../assets/sounds/sanic.mp3');
 const mrbeast = new Audio('../assets/sounds/mrbeast.mp3');
+const gunshot = new Audio('../assets/sounds/pew.mp3');
 
 // Get the input registery from the game page
 let direction_input;
@@ -63,6 +64,10 @@ for (let i = 0; i < buttons.length; i++) {
         button.addEventListener('mousedown', handleABButtons);
     }
 
+    if (button === a_button) {
+        button.addEventListener('mousedown', handleAButtonDown);
+    }
+
     if (button === select_button) {
         button.addEventListener('mousedown', handleSelectButtonDown);
     }
@@ -91,6 +96,18 @@ function handleDpadButtons() {
 
 function handleButtonUp() {
     this.removeAttribute('style');
+}
+
+// Gunshot sound effect plays when controller is active and the A button is pressed (thanks petergriffin.nl <3)
+function handleAButtonDown() {
+    if (controller_status) {
+        if (gunshot.currentTime == 0 || gunshot.ended) {
+          gunshot.play();
+        } else {
+          let newGunshot = gunshot.cloneNode();
+          newGunshot.play();
+        }
+    }
 }
 
 // Changes the players playermodel
