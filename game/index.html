@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="../assets/css/game.css">
+
     <script src="../assets/js/game.js" defer></script>
+    <scirpt src="../assets/js/bullet_logic.js" defer></scirpt>
+
     <title>NES | game</title>
 </head>
 <body>
@@ -15,7 +19,16 @@
     <input type="hidden" value="false" id="controller-active">
     
     <div id="playfield">
-        <div id="scoreboard"><div id="score"></div>SCORE<div id="highscore"></div>HIGHSCORE</div>
+        <div id="scoreboard">
+            <div id="score"></div>
+            SCORE
+
+            <hr style="border: 1px solid white;"> <!-- Prosper dit is de horizontale lijn in het midden, niet weg halen want het staat wat cleaner, please :3-->
+
+            <div id="highscore"></div>
+            HIGHSCORE
+        </div>
+
         <div id="player-container">
             <div id="player"></div>
             <!-- <img id="bullet" src="../assets/img/bullet.png" alt="bullet" /> -->
