@@ -11,6 +11,8 @@ html, body {
 
     width: 100vw;
     height: 100vh;
+
+    overflow: hidden;
 }
 
 #scoreboard {
@@ -34,7 +36,7 @@ html, body {
     width: 100%;
     height: 100%;
 
-    background-color: rgb(34, 83, 34) ;
+    background-color: rgb(34, 83, 34);
 
     display: flex;
 
@@ -63,6 +65,8 @@ html, body {
 
     background-image: url('../img/Player_CT.svg');
     background-size: cover;
+
+    z-index: 2;
 }
 /* 
 #bullet {

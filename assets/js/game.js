@@ -16,7 +16,7 @@ var scoreboard
 let isShooting = false;
 let isReloading = false;
 
-function fired() {
+function reloading() {
   if (!isShooting) {
     isShooting = true;
     setTimeout(() => {
