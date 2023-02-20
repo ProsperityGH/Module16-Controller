@@ -42,3 +42,23 @@ html, body {
     background-image: url('../img/Player_CT.svg');
     background-size: cover;
 }
+/* 
+#bullet {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    visibility: hidden;
+}
+  
+.shooting {
+    visibility: visible;
+    animation: move-bullet 1s linear infinite;
+}
+
+@keyframes move-bullet {
+    from { left: 0; }
+    to { left: 100%;}
+} */
