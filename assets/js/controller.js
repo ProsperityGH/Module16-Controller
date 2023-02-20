@@ -3,6 +3,7 @@ const target = window.open('./game/index.html');
 
 // Sounds
 const gunshot = new Audio('../assets/sounds/pew.mp3');
+const switchteam = new Audio('../assets/sounds/switchteam.mp3');
 
 // Get the input registery from the game page
 let direction_input;
@@ -119,7 +120,7 @@ function handleSelectButtonDown() {
 
         switchteam.play();
 
-        player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
+        // player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
         playermodel = 0;
 
         setTimeout(() => {
@@ -132,7 +133,7 @@ function handleSelectButtonDown() {
 
         switchteam.play();
 
-        player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
+        // player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
         playermodel = 1;
 
         setTimeout(() => {
