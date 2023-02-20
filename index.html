@@ -4,14 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./assets/css/controller.css">
     <link rel="stylesheet" href="./assets/css/popup.css">
+    <link rel="stylesheet" href="./assets/css/help.css">
+
     <script src="./assets/js/controller.js" defer></script>
+    <script src="./assets/js/help.js" defer></script>
+
     <title>NES | controller</title>
 </head>
 <body>
     <div id="popup">
         <!-- Popup for activating/deactivating controller -->
+    </div>
+
+    <div id="help"> <!-- Popup for controls guide -->
+        <div id="overlay" onclick="off()">
+          <div id="text">
+            <h2>Controls</h2>
+            <p>
+                <span>DPAD UP</span> - point character upwards <br>
+                <span>DPAD DOWN</span> - point character downwards <br>
+                <span>DPAD LEFT</span> - point character to the left <br>
+                <span>DPAD RIGHT</span> - point character to the right <br> <br>
+
+                <span>SELECT</span> - change character <br>
+                <span>START</span> - activate controller <br> <br>
+
+                <span>A</span> - shoot <br>
+                <span>B</span> - clear enemies
+            </p>
+          </div>
+        </div>
+        
+        <div style="padding: 20px;">
+          <button onclick="on()" ></button>
+        </div>
     </div>
     
     <div id="controller-container">
