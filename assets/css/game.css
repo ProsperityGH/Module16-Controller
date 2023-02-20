@@ -1,3 +1,10 @@
+/* Imports */
+@font-face {
+    font-family: nescontroller;
+    src: url('../fonts/NES_Controller_MrShrike.ttf');
+}
+
+
 /* Reset margin and padding on body */
 html, body {
     margin: 0;
@@ -5,6 +12,21 @@ html, body {
 
     width: 100vw;
     height: 100vh;
+}
+#scoreboard {
+    width: 150px;
+    height: 120px;
+    background-color: rgba(80, 00, 00, 0.5);
+    border: 3px solid red;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 2%;
+    font-family: nescontroller;
+    font-size: 25px;
 }
 
 /* Playingfield styling */
