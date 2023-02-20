@@ -1,45 +1,61 @@
 // Global variables
 let deg = 0;
 const kaboom = new Audio('../assets/sounds/kaboem.mp3');
+const reload = new Audio('../assets/sounds/reload.mp3');
 
 var highscore = -1;
 
-let score = 0;
-const scoreboard = document.getElementById("score");
-let wait = 0;
-scoreboard.innerHTML = score;
+var bullet = 10;
+var scoreboard
 
-if (localStorage.getItem("highScore")) {
-    highscore = localStorage.getItem("highScore");
-} else {
-    highscore = 0;
+// let score = 0;
+// const scoreboard = document.getElementById("score");
+// let wait = 0;
+// scoreboard.innerHTML = score;
+
+let isShooting = false;
+let isReloading = false;
+
+function fired() {
+  if (!isShooting) {
+    isShooting = true;
+    setTimeout(() => {
+      isShooting = false;
+    }, 1);
+  }
 }
 
-function updateHighScore() {
-    if (score > highscore) {
-      highscore = score;
-      document.getElementById("highscore").innerHTML = highscore;
-      localStorage.setItem("highscore", highscore);
-    }
-}
+// if (localStorage.getItem("highScore")) {
+//     highscore = localStorage.getItem("highScore");
+// } else {
+//     highscore = 0;
+// }
 
-function raak(value, id) {
-    let currentTime = Date.now();
+// function updateHighScore() {
+//     if (score > highscore) {
+//       highscore = score;
+//       document.getElementById("highscore").innerHTML = highscore;
+//       localStorage.setItem("highscore", highscore);
+//     }
+// }
+
+// function raak(value, id) {
+//     let currentTime = Date.now();
   
-    if (currentTime - lastShotTime < 500) {
-      return;
-    }
+//     if (currentTime - lastShotTime < 500) {
+//       return;
+//     }
   
-    lastShotTime = currentTime;
+//     lastShotTime = currentTime;
     
-    score = score + value;
-    scoreboard.innerHTML = score;
-    if ((score > highscore) && (highscore != -1)) {
-      highscore = score;
-      document.getElementById("highscore").innerHTML = highscore;
-      localStorage.setItem("highScore", highscore);
-    }
-}
+//     score = score + value;
+//     scoreboard.innerHTML = score;
+//     if ((score > highscore) && (highscore != -1)) {
+//       highscore = score;
+//       document.getElementById("highscore").innerHTML = highscore;
+//       localStorage.setItem("highScore", highscore);
+//     }
+// }
 
 // Refresh the game 60 frames per second
 setInterval(() => {
@@ -54,11 +70,25 @@ setInterval(() => {
 
     if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
-            AB.value = "";
-            fired(direction);
-
-            // document.getElementById('bullet').classList.add('shooting');
-        } else if (AB.value == "B") {
+            if (bullet > 0 && !isShooting && !isReloading) {
+              AB.value = "";
+              fired(direction);
+              --bullet;
+              magazine.innerHTML = bullet;
+              console.log(magazine.innerHTML);
+              if (bullet == 0) {
+                reload.play();
+                isReloading = true;
+                isShooting = true;
+                setTimeout(() => {
+                  bullet = 10;
+                  magazine.innerHTML = bullet;
+                  isReloading = false;
+                  isShooting = false;
+                }, 2000);
+              }
+            }
+          } else if (AB.value == "B") {
           kaboom.play();
           AB.value = "";
         
