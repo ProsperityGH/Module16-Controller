@@ -12,10 +12,11 @@ html, body {
     width: 100vw;
     height: 100vh;
 }
+
 #scoreboard {
     width: 150px;
-    height: 120px;
-    background-color: rgba(80, 00, 00, 0.5);
+    height: 200px;
+    background-color: rgba(40, 1, 1, 0.5);
     border: 3px solid red;
     border-radius: 10px;
     padding: 15px;
@@ -78,8 +79,3 @@ html, body {
     visibility: visible;
     animation: move-bullet 1s linear infinite;
 }
-
-@keyframes move-bullet {
-    from { left: 0; }
-    to { left: 100%;}
-} */
