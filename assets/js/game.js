@@ -2,6 +2,43 @@
 let deg = 0;
 const kaboom = new Audio('../assets/sounds/kaboem.mp3');
 
+var highscore = -1;
+
+score = 0;
+scoreboard = document.getElementById("score");
+wait = 0;
+scoreboard.innerHTML = score;
+
+if (localStorage.getItem("highScore")) {
+    highscore = localStorage.getItem("highScore");
+} else {
+    highscore = 0;
+}
+
+function updateHighScore() {
+    if (score > highscore) {
+      highscore = score;
+      document.getElementById("highscore").innerHTML = highscore;
+      localStorage.setItem("highscore", highscore);
+    }
+}
+function raak(value, id) {
+    let currentTime = Date.now();
+  
+    if (currentTime - lastShotTime < 500) {
+      return;
+    }
+  
+    lastShotTime = currentTime;
+    
+    score = score + value;
+    scoreboard.innerHTML = score;
+    if ((score > highscore) && (highscore != -1)) {
+      highscore = score;
+      document.getElementById("highscore").innerHTML = highscore;
+      localStorage.setItem("highScore", highscore);
+    }
+}
 // Refresh the game 60 frames per second
 setInterval(() => {
     const direction = document.getElementById('direction-input-register');
@@ -12,7 +49,6 @@ setInterval(() => {
     const player = document.getElementById('player');
 
     const controller_active = document.getElementById('controller-active').value;
-
 
     if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
