@@ -120,7 +120,7 @@ function handleSelectButtonDown() {
 
         switchteam.play();
 
-        // player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
+        player.style.backgroundImage = "url('../assets/img/Player_T.svg')";
         playermodel = 0;
 
         setTimeout(() => {
@@ -133,7 +133,7 @@ function handleSelectButtonDown() {
 
         switchteam.play();
 
-        // player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
+        player.style.backgroundImage = "url('../assets/img/Player_CT.svg')";
         playermodel = 1;
 
         setTimeout(() => {

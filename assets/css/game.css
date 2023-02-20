@@ -39,6 +39,6 @@ html, body {
 
     transition: all .25s ease-in-out;
 
-    background-image: url('../img/sanicTAK.png');
+    background-image: url('../img/Player_CT.svg');
     background-size: cover;
 }
