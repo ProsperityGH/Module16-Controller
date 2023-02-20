@@ -23,30 +23,36 @@ Stap 4: Test de interactie tussen de twee pagina's. Verifieer dat de controllerp
 Stap 5: Verfijn en polijst het spel. Voeg eventuele extra functies of verbeteringen toe, zoals geluideffecten, animaties of verbeterde grafieken.
 
 ## Planning
-Dag 1:
-- Plan het algehele ontwerp en de mechanieken van het spel.
-- Bepaal het uiterlijk van de speler en zombies, het schietmechanisme en het scoresysteem.
+Week 1:
 
-Dag 2:
-- Begin met de implementatie van de spelpagina met HTML en CSS.
-- Zorg ervoor dat het spelbord er visueel aantrekkelijk uitziet en de juiste elementen bevat.
+Maandag:
+- Begin met het plannen van het algehele ontwerp en de mechanieken van het spel. Bepaal het uiterlijk van de speler en zombies, het schietmechanisme en het scoresysteem.
 
-Dag 3:
-- Voeg de JavaScript-logica toe aan de spelpagina.
-- Zorg ervoor dat het spel werkt zoals bedoeld en dat er interactie is met de controllerpagina.
+Dinsdag:
+- Start met het ontwerpen van de spelpagina met HTML, CSS en JavaScript.
 
-Dag 4:
-- Begin met de implementatie van de controllerpagina met HTML en CSS.
-- Zorg ervoor dat de knoppen er visueel aantrekkelijk uitzien en de juiste elementen bevatten.
+Woensdag:
+- Implementeer de mechanieken van het spel op de spelpagina en zorg ervoor dat de spelpagina kan communiceren met de controllerpagina.
 
-Dag 5:
-- Voeg de JavaScript-logica toe aan de controllerpagina.
-- Zorg ervoor dat de knoppen op de controllerpagina communiceren met de spelpagina.
+Donderdag:
+- Maak een start aan de controllerpagina en gebruik HTML, CSS en JavaScript om de knoppen te ontwerpen.
 
-Dag 6:
-- Test de interactie tussen de twee pagina's.
-- Verifieer dat de controllerpagina het spel kan beheersen en dat de spelpagina wordt bijgewerkt in reactie op acties op de controllerpagina.
+Vrijdag:
+- Werk aan de communicatie tussen de controllerpagina en de spelpagina. Zorg ervoor dat de knoppen op de controllerpagina gebeurtenissen in het spel kunnen triggeren.
 
-Dag 7:
+Week 2:
+
+Maandag:
+- Test de interactie tussen de twee pagina's en verifieer dat de controllerpagina het spel kan beheersen en dat de spelpagina wordt bijgewerkt in reactie op acties op de controllerpagina.
+
+Dinsdag:
+- Voeg extra functies of verbeteringen toe aan het spel, zoals geluidseffecten, animaties of verbeterde grafieken.
+
+Woensdag:
+- Werk verder aan eventuele extra functies of verbeteringen van het spel.
+
+Donderdag:
 - Verfijn en polijst het spel.
-- Voeg eventuele extra functies of verbeteringen toe, zoals geluideffecten, animaties of verbeterde grafieken.
+
+Vrijdag:
+- Rond het spel af en test het opnieuw.
