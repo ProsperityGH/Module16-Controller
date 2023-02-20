@@ -4,9 +4,9 @@ const kaboom = new Audio('../assets/sounds/kaboem.mp3');
 
 var highscore = -1;
 
-score = 0;
-scoreboard = document.getElementById("score");
-wait = 0;
+let score = 0;
+const scoreboard = document.getElementById("score");
+let wait = 0;
 scoreboard.innerHTML = score;
 
 if (localStorage.getItem("highScore")) {
@@ -22,6 +22,7 @@ function updateHighScore() {
       localStorage.setItem("highscore", highscore);
     }
 }
+
 function raak(value, id) {
     let currentTime = Date.now();
   
@@ -39,6 +40,7 @@ function raak(value, id) {
       localStorage.setItem("highScore", highscore);
     }
 }
+
 // Refresh the game 60 frames per second
 setInterval(() => {
     const direction = document.getElementById('direction-input-register');
@@ -53,7 +55,8 @@ setInterval(() => {
     if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
             AB.value = "";
-            console.log('shoot');
+            fired(direction);
+
             // document.getElementById('bullet').classList.add('shooting');
         } else if (AB.value == "B") {
           kaboom.play();

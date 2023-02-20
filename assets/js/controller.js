@@ -125,7 +125,7 @@ function handleSelectButtonDown() {
 
         setTimeout(() => {
             popup.classList.remove("t");
-        }, 700);
+        }, 1000);
 
       } else {
         popup.classList.add("ct");
@@ -138,7 +138,7 @@ function handleSelectButtonDown() {
 
         setTimeout(() => {
             popup.classList.remove("ct");
-        }, 700);
+        }, 1000);
       }
     }
 }
@@ -157,7 +157,7 @@ function handleStartButtonDown() {
 
         setTimeout(() => {
             popup.classList.remove("controller_inactive");
-        }, 700);
+        }, 1000);
     } else {
         popup.classList.add("controller_active");
         popup.innerText = "Controller active";
@@ -169,7 +169,7 @@ function handleStartButtonDown() {
 
         setTimeout(() => {
             popup.classList.remove("controller_active");
-        }, 700);
+        }, 1000);
 
         playermodel = 1;
 
