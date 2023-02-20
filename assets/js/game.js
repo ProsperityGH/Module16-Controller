@@ -17,7 +17,8 @@ setInterval(() => {
     if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
             AB.value = "";
-            console.log('shoot')
+            console.log('shoot');
+            // document.getElementById('bullet').classList.add('shooting');
         } else if (AB.value == "B") {
           kaboom.play();
           AB.value = "";
