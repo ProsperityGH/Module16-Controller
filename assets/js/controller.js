@@ -2,8 +2,6 @@
 const target = window.open('./game/index.html');
 
 // Sounds
-const sanic = new Audio('../assets/sounds/sanic.mp3');
-const mrbeast = new Audio('../assets/sounds/mrbeast.mp3');
 const gunshot = new Audio('../assets/sounds/pew.mp3');
 
 // Get the input registery from the game page
@@ -116,29 +114,29 @@ function handleSelectButtonDown() {
       return;
     } else {
       if (playermodel === 1) {
-        popup.classList.add("mrbeast");
-        popup.innerText = "You're now MrBeast";
+        popup.classList.add("t");
+        popup.innerText = "You have become a T";
 
-        mrbeast.play();
+        switchteam.play();
 
         player.style.backgroundImage = "url('../assets/img/mrbeastCTM4.png')";
         playermodel = 0;
 
         setTimeout(() => {
-            popup.classList.remove("mrbeast");
+            popup.classList.remove("t");
         }, 700);
 
       } else {
-        popup.classList.add("sanic");
-        popup.innerText = "You're now Sanic";
+        popup.classList.add("ct");
+        popup.innerText = "You have become a CT";
 
-        sanic.play();
+        switchteam.play();
 
         player.style.backgroundImage = "url('../assets/img/sanicTAK.png')";
         playermodel = 1;
 
         setTimeout(() => {
-            popup.classList.remove("sanic");
+            popup.classList.remove("ct");
         }, 700);
       }
     }

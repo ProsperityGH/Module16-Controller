@@ -45,22 +45,22 @@
     top: 25px !important;
 }
 
-.mrbeast {
+.ct {
     opacity: 1 !important;
 
-    background-color: yellow;
-    box-shadow: yellow;
-
-    color: black !important;
+    background-color: blue;
+    box-shadow: blue;
 
     top: 25px !important;
 }
 
-.sanic {
+.t {
     opacity: 1 !important;
 
-    background-color: blue;
-    box-shadow: 0 0 10px blue;
+    background-color: orange;
+    box-shadow: 0 0 10px orange;
+
+    color: black !important;
 
     top: 25px !important;
 }
