@@ -2,6 +2,7 @@
 let deg = 0;
 const kaboom = new Audio('../assets/sounds/kaboem.mp3');
 const reload = new Audio('../assets/sounds/reload.mp3');
+const gunshot = new Audio('../assets/sounds/pew.mp3');
 
 var highscore = -1;
 
@@ -15,15 +16,7 @@ var scoreboard
 
 let isShooting = false;
 let isReloading = false;
-
-function reloading() {
-  if (!isShooting) {
-    isShooting = true;
-    setTimeout(() => {
-      isShooting = false;
-    }, 1);
-  }
-}
+let lastShotTime = 0;
 
 // if (localStorage.getItem("highScore")) {
 //     highscore = localStorage.getItem("highScore");
@@ -70,12 +63,27 @@ setInterval(() => {
 
     if (controller_active == 'true')  { // Changes playermodel into explosion when activated
         if (AB.value == "A") {
+            let currentTime = Date.now();
+
+            if (currentTime - lastShotTime < 500) {
+                return;
+            }
+            
+            if (currentTime - lastShotTime > 500 && !isShooting && !isReloading) {
+                if (gunshot.currentTime == 0 || gunshot.ended) {
+                    gunshot.play();
+                  } else {
+                    let newGunshot = gunshot.cloneNode();
+                    newGunshot.play();
+                }
+            }
+
+            lastShotTime = currentTime;
+
             if (bullet > 0 && !isShooting && !isReloading) {
               AB.value = "";
-              fired(direction);
               --bullet;
               magazine.innerHTML = bullet;
-              console.log(magazine.innerHTML);
               if (bullet == 0) {
                 reload.play();
                 isReloading = true;

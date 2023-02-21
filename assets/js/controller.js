@@ -2,7 +2,6 @@
 const target = window.open('./game/index.html');
 
 // Sounds
-const gunshot = new Audio('../assets/sounds/pew.mp3');
 const switchteam = new Audio('../assets/sounds/switchteam.mp3');
 
 // Get the input registery from the game page
@@ -99,14 +98,7 @@ function handleButtonUp() {
 
 // Gunshot sound effect plays when controller is active and the A button is pressed (thanks petergriffin.nl <3)
 function handleAButtonDown() {
-    if (controller_status) {
-        if (gunshot.currentTime == 0 || gunshot.ended) {
-          gunshot.play();
-        } else {
-          let newGunshot = gunshot.cloneNode();
-          newGunshot.play();
-        }
-    }
+
 }
 
 // Changes the players playermodel
